@@ -4,11 +4,13 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "dev": "vite --host --force",
+    "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
     "clean": "rm -rf dist node_modules/.vite",
-    "setup": "npm run clean && npm install"
+    "setup": "npm run clean && npm install",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.4.2",
@@ -21,6 +23,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.3.4",
+    "gh-pages": "^6.3.0",
     "vite": "^4.4.9"
   }
 }

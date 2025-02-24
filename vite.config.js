@@ -3,12 +3,22 @@ import vue from '@vitejs/plugin-vue'
 import path from 'path'
 
 export default defineConfig({
+  // 部署子路径配置
+  base: '/zhizhenyunmou/',
+  
   plugins: [vue()],
+  
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src')
     }
   },
+  
+  // 构建配置
+  build: {
+      outDir: 'dist'
+  },
+
   server: {
     proxy: {
       '/api': {
